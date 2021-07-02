@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+	
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	max-width: 1180px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 30px;
+
+}
+.logo{
+    display: flex;
+}
+
+
+form{
+    width: 402px;
+	height: 25px;
+	display: flex;
+	height: inherit;
+}
+
+form>input{
+    width: 320px;
+    border: none;
+    border-bottom: 1px solid #333333;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+form>button{
+    color: red;
+    border: none;
+    background-color: inherit;
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.login_enter:hover{
+	background: #CC221B;
+}
+
+.button_enter:after{
+	content: "Войти";
+}
+
+.button_exit:after{
+	content: "Выйти";
+}
+
+.login_enter{  
+    display: inline-block;
+    padding: 9px 32px;
+    background: #E5261E;
+    border-radius: 4px;
+    font-family: Rubik;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+	border: 0px;
+}
+
+.login_exit{  
+    display: inline-block;
+    padding: 9px 32px;
+    background: none;
+    color: red;
+    font-family: Rubik;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	border: 0px;
+}
+
+/*   ВЫБОР "ФИЛЬМЫ" ИЛИ "ТЕЛЕКАНАЛЫ" */
+
+h1 {
+	display: flex;
+	flex-direction: row;	
+	height:42px;
+	margin: 0 auto;
+	margin-top:48px;
+	margin-left: 565px;
+}
+.title{
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 33px;
+	text-align: right;
+	color: #333333;
+	text-decoration: none;
+	outline: none
+}
+#tv{
+	margin-left:24px;
+}
+
+.active{
+	color:red;
+	padding-bottom: 9px;
+    border-bottom: 2px solid red;
+}
+
+/* ФИЛЬМЫ */
+
+.new-content-movies{
+	display:flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	max-width: 1180px;
+	height:478px;
+	margin: 0 auto;
+	margin-top: 41px;
+}
+
+.title-new {
+	width:134px;
+	height:28px;
+	font-family: Rubik;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 28px;
+	letter-spacing: 0em;
+	text-align: right;
+	color: #333333;
+}
+
+
+.movies-new{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	max-width: 1180px;
+	margin-top: 16px;
+}
+
+.movies-image{
+
+	border-radius: 8px;
+
+}
+
+.movie{
+	position:relative;
+}
+
+.movie-info{
+    display: none;
+    position: absolute;
+    top: 0;
+    background: #333333;
+    opacity: 0.8;
+    width: 248px;
+    height: 338px;
+    border-radius: 8px;
+    padding: 16px;
+    color: #F2F2F2;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.movie_3:hover>.movie-info{
+	display:block;
+	cursor:pointer;
+}
+
+.movie-name{
+	font-family: Rubik;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	margin-top: 16px;
+	height: 24px;
+	width: 280px;
+	color: #333333;
+}
+
+/*     ЖАНРЫ    */
+
+.genres{
+	display:flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	max-width: 1180px;
+	height:252px;
+	margin: 0 auto;
+	margin-top: 32px;
+}
+
+.genres-title{
+	font-family: Rubik;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 28px;
+	letter-spacing: 0em;
+	width: 87px;
+	height: 28px;
+	color: #333333;
+}
+
+.genres-content{	
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	max-width: 1180px;
+	margin-top: 16px;
+}
+
+.genres_comedy{
+	background: linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%);
+	opacity: 0.8;
+	box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
+	border-radius: 6px;
+}
+
+
+.genres_dramas{
+	background: linear-gradient(127.83deg, #F2994A 8.44%, #EB5757 91.36%);
+	opacity: 0.8;
+	box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
+	border-radius: 6px;
+}
+
+.genres_fantastic{
+	background: linear-gradient(127.83deg, #56CCF2 8.44%, #2F80ED 91.36%);
+	opacity: 0.8;
+	box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
+	border-radius: 6px;
+}
+
+.genres_horrors{
+	background: linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%);
+	opacity: 0.8;
+	box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
+	border-radius: 6px;
+}
+
+.genre{
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items:center;
+	position:relative;
+	height:208px;
+	width:280px;
+}
+
+.genre:hover{
+	opacity: 1;
+	cursor:pointer;
+}
+
+.smile{
+	display:block;
+	position:absolute;
+	left:116px;
+	top:80px;
+}
+
+.genre_name{
+	margin-top:160px;
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	color: #FFFFFF
+}
+
+/*  FOOTER  */
+
+footer {
+	display: flex;	
+	max-width: 1440px;
+	height: 120px;
+	margin: 0 auto;
+	background: #F2F2F2;
+	margin-top:72px;
+}
+.logo-footer{
+	margin-top:28px;
+	margin-left:130.03px;
+}
+.info-footer{
+	display:flex;
+	flex-direction:column;
+	margin: 0 auto;
+	margin-top:22px;
+	margin-left:39.98px;
+}
+.info {
+	font-family: Rubik;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: left;
+}
+.site{
+	font-family: Rubik;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #1F4766;
+	margin-top: 10px;
+}
+.number {
+	margin-top: 6px;
+}
+
+
+/*  АВТОРИЗАЦИЯ */
+
+
+.authorization{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333;
+	opacity: 0.6;
+    display: none;
+	justify-content:center;
+	align-items:center;
+}
+
+
+.authorization_click{
+	display:flex;
+}
+
+.authorization_form{
+	height: 394px;
+	width: 304px;
+	background: white;
+	border-radius: 8px;
+	opacity: 1.0;
+}
+
+
+
+
+
+
