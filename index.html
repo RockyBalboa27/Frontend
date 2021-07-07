@@ -18,13 +18,14 @@
 		</div>
 		
 		<form>
-			<input type="text" placeholder="Поиск...">
+			<input id="search" type="text" placeholder="Поиск..." oninput="testSearch()">
 			<button type="submit">Найти</button>
 		</form>
 		
-
-		<button id="button_id" class="login_enter button_enter" onclick="button_click()"></button>
-		
+		<div class="enter">
+			<div id="user"></div>
+			<button id="button_id" class="login_enter button_enter" onclick="button_click()"></button>
+		</div class="enter">
 	</header>
 	
 	<h1>
@@ -32,68 +33,70 @@
 		<a id="tv" onclick="tvClick()" href="#" class="title">Телеканалы</a>
 	</h1>
 	
-	<main class="main-movies">
+	<main id="main-movies" class="main-movies">
 		<section class="new-content-movies">
 			<div class="title-new">
 				🔥 Новинки
 			</div>
 			
-			<div class="movies-new">
-			
-				<div class="one-movies">
-				
-					<div class="movie_1 movie">
-						<img class="movies-image" src="style/images/film_1.svg">
-					</div>
+			<ul id="movies-new" class="movies-new ">
+				<li class="one-movies">
 					
-					<div class="movie-name">
-						Мульт в кино. Выпуск №103. Некогда грустить!
-					</div>
-					
-				</div>
-				
-				<div class="two-movies">
-				
-					<div class="movie_2 movie">
-						<img class="movies-image" src="style/images/film_2.svg">
-					</div>
-					
-					<div class="movie-name">
-						Новый Бэтмен
-					</div>
-					
-				</div>
-				
-				<div class="three-movies">
-				
-					<div class="movie_3 movie">
-					
-						<img class="movies-image" src="style/images/film_3.svg">
-						
-						<div class="movie-info">
-							Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.
+						<div class="movie_1 movie">
+							<img class="movies-image" src="style/images/film_1.svg">
 						</div>
 						
-					</div>
-					
-					<div class="movie-name">
-						Однажды... в Голливуде
-					</div>
-					
-				</div>
+						<div class="movie-name">
+							Мульт в кино. Выпуск №103. Некогда грустить!
+						</div>
+						
+				</li>
 				
-				<div class="four-movies">
+				<li class="two-movies">
+
+					
+						<div class="movie_2 movie">
+							<img class="movies-image" src="style/images/film_2.svg">
+						</div>
+						
+						<div class="movie-name">
+							Новый Бэтмен
+						</div>
+						
+
+				</li>
 				
-					<div class="movie_4 movie">
-						<img class="movies-image" src="style/images/film_4.svg">						
-					</div>
+				<li class="three-movies">
 					
-					<div class="movie-name">
-						Стриптизёрши
-					</div>
-					
-				</div>
-			</div>
+						<div class="movie_3 movie">
+						
+							<img class="movies-image" src="style/images/film_3.svg">
+							
+							<div class="movie-info">
+								Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.
+							</div>
+							
+						</div>
+						
+						<div class="movie-name">
+							Однажды... в Голливуде
+						</div>
+						
+				</li>
+				
+				<li class="four-movies">
+									
+						<div class="movie_4 movie">
+							<img class="movies-image" src="style/images/film_4.svg">						
+						</div>
+						
+						<div class="movie-name">
+							Стриптизёрши
+						</div>
+						
+				</li>
+			</ul>
+			
 		</section>
 		
 		<section class="genres">
@@ -158,6 +161,186 @@
 		
 	</main>
 	
+	<main id="main-tv" class="main-tv">
+		<ul class="ul-tv">
+			<li>
+				<div class="channel">
+					
+					<div class="logo-tv">
+						<img src="style/images/tv/1st.svg">
+					</div>
+					
+					<div class="info-channel">
+						
+						<h3>Первый канал</h3>
+						
+						<ul class="ul-tv">
+						
+							<li class="active-info">
+								<div class="time">13:00</div>
+								<div class="time-info">Новости (с субтитрами)</div>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">14:00</span>
+								<span class="time-info">Давай поженимся</span>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">15:00</span>
+								<span class="time-info">Другие новости</span>
+							</li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+			</li>
+			
+			<li>
+				<div class="channel channel-top">
+					
+					<div class="logo-tv">
+						<img src="style/images/tv/2x2.svg">
+					</div>
+					
+					<div class="info-channel">
+						
+						<h3>2x2</h3>
+						
+						<ul class="ul-tv">
+						
+							<li class="active-info">
+								<div class="time">13:00</div>
+								<div class="time-info">МУЛЬТ ТВ. Сезон 4, 7 серия</div>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">14:00</span>
+								<span class="time-info">ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия</span>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">15:00</span>
+								<span class="time-info">БУРДАШЕВ. Сезон 1, 20 серия</span>
+							</li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+			</li>
+			
+			<li>
+				<div class="channel channel-top">
+					
+					<div class="logo-tv">
+						<img src="style/images/tv/rbc.svg">
+					</div>
+					
+					<div class="info-channel">
+						
+						<h3>РБК</h3>
+						
+						<ul class="ul-tv">
+						
+							<li class="active-info">
+								<div class="time">13:00</div>
+								<div class="time-info">ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС</div>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">14:00</span>
+								<span class="time-info">ДЕНЬ. Главные темы</span>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">15:00</span>
+								<span class="time-info">Главные новости</span>
+							</li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+			</li>
+						
+			<li>
+				<div class="channel channel-top">
+					
+					<div class="logo-tv">
+						<img src="style/images/tv/amedia.svg">
+					</div>
+					
+					<div class="info-channel">
+						
+						<h3>AMEDIA PREMIUM</h3>
+						
+						<ul class="ul-tv">
+						
+							<li class="active-info">
+								<div class="time">13:00</div>
+								<div class="time-info">Клиент всегда мёртв</div>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">14:00</span>
+								<span class="time-info">Голодные игры: Сойка-пересмешница. Часть I</span>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">15:00</span>
+								<span class="time-info">Секс в большом городе</span>
+							</li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+			</li>
+			
+			<li>
+				<div class="channel channel-top">
+					
+					<div class="logo-tv">
+						<img src="style/images/tv/amedia.svg">
+					</div>
+					
+					<div class="info-channel">
+						
+						<h3>AMEDIA PREMIUM</h3>
+						
+						<ul class="ul-tv">
+						
+							<li class="active-info">
+								<div class="time">13:00</div>
+								<div class="time-info">Клиент всегда мёртв</div>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">14:00</span>
+								<span class="time-info">Голодные игры: Сойка-пересмешница. Часть I</span>
+							</li>
+							
+							<li class="info-clock">
+								<span class="time">15:00</span>
+								<span class="time-info">Секс в большом городе</span>
+							</li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+			</li>
+			
+		</ul>
+	</main>
+	
 	<footer>
 		<div class="logo-footer">
 			<img src="style/images/htc-cs-logo.svg">
@@ -170,10 +353,25 @@
 		</div>
 	</footer>
 	
-	<div id="authorization" class="authorization">
-		<div class="authorization_form">
-			
-		</div>
+	<div id="wrapper" class="wrapper">
+		<div class="modal-wrapper">
+			<div class="modal-window">
+				
+				<div class="form">
+					<h2>Вход</h2>
+					<input id="login" type="text" placeholder="Логин">
+					<input id="password" type="password" placeholder="Пароль">
+					<div class="remember">
+						<input class="check" type="checkbox" name="" id="radio"><label>Запомнить</label>
+					</div>
+					<button id="button_id_enter" class="login_enter button_enter" onclick="button_login_click()"></button>
+				</div>
+				
+			</div>
+		</div>	
+		<div class="overlay"></div>
+	
 	</div>
+
 </body>
 </html>

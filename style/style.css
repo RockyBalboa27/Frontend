@@ -34,6 +34,7 @@ form>input{
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
+	outline: none;
 }
 
 form>button{
@@ -84,15 +85,38 @@ form>button{
 	border: 0px;
 }
 
+.enter{
+	display:flex;
+	flex-direction: row;
+	align-items:center;
+}
+
+#user{
+	
+	width: 114px;
+	height:19px;
+	margin-right:16px;
+	font-family: Rubik;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: right;
+
+}
+
 /*   ВЫБОР "ФИЛЬМЫ" ИЛИ "ТЕЛЕКАНАЛЫ" */
 
 h1 {
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
+	justify-content: center;	
 	height:42px;
+	width:311px;
 	margin: 0 auto;
 	margin-top:48px;
-	margin-left: 565px;
+
 }
 .title{
 	font-family: Rubik;
@@ -116,6 +140,14 @@ h1 {
 }
 
 /* ФИЛЬМЫ */
+
+.main-movies{
+	display:block;
+}
+
+.main-movies-none{
+	display:none;
+}
 
 .new-content-movies{
 	display:flex;
@@ -147,6 +179,8 @@ h1 {
 	justify-content: space-between;
 	max-width: 1180px;
 	margin-top: 16px;
+	list-style-type: none;
+	padding: 0;
 }
 
 .movies-image{
@@ -157,8 +191,12 @@ h1 {
 
 .movie{
 	position:relative;
+	
 }
-
+.movie-test{
+	justify-content: flex-start;
+	margin-left:20px;
+}
 .movie-info{
     display: none;
     position: absolute;
@@ -190,6 +228,7 @@ h1 {
 	width: 280px;
 	color: #333333;
 }
+
 
 /*     ЖАНРЫ    */
 
@@ -285,6 +324,111 @@ h1 {
 	color: #FFFFFF
 }
 
+/* ТЕЛЕКАНАЛЫ */
+
+.main-tv{
+	display:none;
+	max-width: 1194px;
+	height:696px;
+	margin: 0 auto;
+	margin-top: 27px;
+	overflow-y: scroll;
+}
+
+.main-tv-active{
+	display:block;
+}
+
+.main-tv::-webkit-scrollbar{
+	width: 4px;
+	border-radius: 2px;
+	background: #F2F2F2;
+}
+.main-tv::-webkit-scrollbar-thumb{
+	background: #BDBDBD;    
+    border-radius: 2px;
+}
+.ul-tv{
+	display:flex;
+	flex-direction: column;
+	align-items:space-between;
+	list-style-type: none;
+	padding: 0;
+	margin-top: 0;
+    margin-bottom: 0;
+}
+
+.channel{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	height: 162px;
+	max-width: 1180px;
+	background: #F2F2F2;
+	border-radius: 8px;
+	padding-top:0;
+}
+
+
+
+.info-channel{
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-start;
+}
+
+h3{
+	font-family: Rubik;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 24px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #333333;
+}
+
+.info-clock{
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color: #333333;
+	margin-top: 12px;
+	display:flex;
+	flex-direction:row;
+	
+}
+
+.active-info{
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color: #E5261E;
+
+	display:flex;
+	flex-direction:row;
+}
+
+.time-info{
+	margin-left:16px;
+}
+
+.logo-tv{
+	height:162px;
+	width:400px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.channel-top{
+	margin-top:16px;
+}
+
 /*  FOOTER  */
 
 footer {
@@ -334,29 +478,123 @@ footer {
 /*  АВТОРИЗАЦИЯ */
 
 
-.authorization{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #333333;
-	opacity: 0.6;
-    display: none;
+.wrapper{
+	display:none;
+}
+.modal-wrapper{
+	display:flex;
+	justify-content:center;
+	max-width:1180px;
+	height:1144px;
+	margin:0 auto;
+	margin-top:-1144px;
+}
+
+.modal-wrapper-click{
+	display:block;
+}
+.modal-wrapper-none{
+	display:none;
+}
+.modal-window{
+	display:flex;
 	justify-content:center;
 	align-items:center;
-}
-
-
-.authorization_click{
-	display:flex;
-}
-
-.authorization_form{
 	height: 394px;
 	width: 304px;
 	background: white;
 	border-radius: 8px;
-	opacity: 1.0;
+	margin-top:203px;
+	z-index:1;
+}
+
+.overlay{
+	position: fixed;	
+	top: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333;
+	opacity: 0.6;
+    display: block;
+	justify-content:center;
+	align-items:center;
+}
+
+.form{
+	display:flex;
+	align-items:center;
+	flex-direction: column;
+	height: 322px;
+	width: 232px;
+}
+
+h2{
+	margin-top:0px;
+	height:33px;
+	width:70px;
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 33px;
+	color: #333333;
+}
+
+.form>input{
+	border: none;
+	border-bottom: 1px solid #333333;
+	width: 232px;
+	font-family: Rubik;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 19px;
+	color: #333333;
+	margin-top:24px;
+	outline:none;
+}
+
+
+
+.remember>label{
+	margin-right:135px;
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color: #333333;
+	margin-left:8px;
+}
+
+.check{
+	border: 1px solid #333333;
+	box-sizing: border-box;
+	border-radius: 4px;
+	cursor:pointer;
+}
+
+.remember{
+	display:flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-top:24px;
+}
+
+#button_id_enter{
+	margin-top:113px;
+}
+
+.hide{
+	display:none;
+}
+
+.flex-start{
+	justify-content: flex-start;
+	
+}
+.flex-margin{
+	margin-left:20px;
 }
 
 
