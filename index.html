@@ -23,9 +23,12 @@
 		</form>
 		
 		<div class="enter">
+
 			<div id="user"></div>
-			<button id="button_id" class="login_enter button_enter" onclick="button_click()"></button>
-		</div class="enter">
+			<button id="button_id_exit" class="login_exit button_exit hide" onclick="button_click_exit()">Выйти</button>
+			
+			<button id="button_id_enter" class="login_enter button_enter hide" onclick="button_click_enter()">Войти</button>		
+		</div>
 	</header>
 	
 	<h1>
@@ -342,14 +345,16 @@
 	</main>
 	
 	<footer>
-		<div class="logo-footer">
-			<img src="style/images/htc-cs-logo.svg">
-		</div>
-		
-		<div class="info-footer">
-			<div class="address info">426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</div>
-			<div class="number info">+7 (3412) 93-88-61, 43-29-29 </div>
-			<div class="site"> htc-cs.ru </div>
+		<div class="cont">
+			<div class="logo-footer">
+				<img src="style/images/htc-cs-logo.svg">
+			</div>
+			
+			<div class="info-footer">
+				<div class="address info">426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</div>
+				<div class="number info">+7 (3412) 93-88-61, 43-29-29 </div>
+				<div class="site"> htc-cs.ru </div>
+			</div>
 		</div>
 	</footer>
 	
@@ -359,12 +364,12 @@
 				
 				<div class="form">
 					<h2>Вход</h2>
-					<input id="login" type="text" placeholder="Логин">
-					<input id="password" type="password" placeholder="Пароль">
+					<input id="login" type="text" placeholder="Логин" maxlength="14" oninput="maxlength_login()">
+					<input id="password" type="password" placeholder="Пароль" maxlength="14" oninput="maxlength_pass()">
 					<div class="remember">
 						<input class="check" type="checkbox" name="" id="radio"><label>Запомнить</label>
 					</div>
-					<button id="button_id_enter" class="login_enter button_enter" onclick="button_login_click()"></button>
+					<button id="button_id_enter_wrapper" class="login_enter button_enter" onclick="button_login_click()">Войти</button>
 				</div>
 				
 			</div>

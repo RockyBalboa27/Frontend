@@ -1,13 +1,16 @@
 window.onload = function(){
+	let myButtonClasses_exit = document.getElementById("button_id_exit").classList;
+	let myButtonClasses_enter = document.getElementById("button_id_enter").classList;
 	if(localStorage.length > 0){
 		let user_name = localStorage.key(0);
 		let user = document.getElementById("user");
 		user.innerHTML = user_name.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-		let myButtonClasses = document.getElementById("button_id").classList;
-		myButtonClasses.remove("login_enter");
-		myButtonClasses.remove("button_enter");
-		myButtonClasses.add("login_exit");
-		myButtonClasses.add("button_exit");
+		myButtonClasses_exit.remove("hide");
+		myButtonClasses_enter.add("hide");
+	}
+	else{
+		myButtonClasses_exit.add("hide");
+		myButtonClasses_enter.remove("hide");
 	}
 };
 
@@ -33,28 +36,26 @@ function moviesClick(){
 	tv.remove("main-tv-active");
 }
 
-function button_click(){
-	let myButtonClasses = document.getElementById("button_id").classList;
+function button_click_enter(){
+	let myButtonClasses = document.getElementById("button_id_enter").classList;
+	let myButtonClasses_exit = document.getElementById("button_id_exit").classList;
 	let wrapper = document.getElementById("wrapper").classList;
-	if(myButtonClasses[1]=='button_enter'){
-		myButtonClasses.remove("login_enter");
-		myButtonClasses.remove("button_enter");
-		myButtonClasses.add("login_exit");
-		myButtonClasses.add("button_exit");
-		wrapper.add("modal-wrapper-click");
-	}
-	else{
-		let user_name="";
-		let user = document.getElementById("user");
-		user.innerHTML = user_name.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-		myButtonClasses.remove("login_exit");
-		myButtonClasses.remove("button_exit");
-		myButtonClasses.add("login_enter");
-		myButtonClasses.add("button_enter");
 	
-	}
-
+	myButtonClasses_exit.remove("hide");
+	myButtonClasses.add("hide");
+	wrapper.add("modal-wrapper-click");
+	
 }
+function button_click_exit(){
+	let myButtonClasses = document.getElementById("button_id_enter").classList;
+	let myButtonClasses_exit = document.getElementById("button_id_exit").classList;
+	let user_name="";
+	let user = document.getElementById("user");
+	user.innerHTML = user_name.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+	myButtonClasses_exit.add("hide");	
+	myButtonClasses.remove("hide");
+}
+
 
 function button_login_click(){
 	let login = document.getElementById("login").value;
@@ -123,4 +124,26 @@ function testSearch(){
 		el.remove("flex-start");
 	}
 
+}
+
+function maxlength_login(){
+	let val = document.getElementById("login").value;
+	let val_new;
+	let i=0;
+	if(val.length > 13){
+		alert("Максимальная длина ввода данных 13 символов");
+		val_new = val.slice(0,-1);
+		document.getElementById("login").value = val_new;
+	}
+}
+
+function maxlength_pass(){
+	let val = document.getElementById("password").value;
+	let val_new;
+	let i=0;
+	if(val.length > 13){
+		alert("Максимальная длина ввода данных 13 символов");
+		val_new = val.slice(0,-1);
+		document.getElementById("password").value = val_new;
+	}
 }
