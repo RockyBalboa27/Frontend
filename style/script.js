@@ -89,31 +89,38 @@ function button_login_click(){
 
 
 function testSearch(){
-	let elasticItems = document.querySelectorAll(".movies-new li");
-	let elasticItems_list = document.querySelectorAll(".movies-new li").classList;
-	console.log(elasticItems);
-	let val = document.getElementById("search").value.trim().toLowerCase();
+	
+	let elasticItems = document.querySelectorAll(".movies-new li"); // берем все элементы с тегом li в классе movies-new
+	elasticItems.forEach(function(elem){ // делаем все объекты видимыми(связано с тем, что при вводе второй и более буквы в elasticItems попадает не только название, 
+		elem.classList.remove("hide");	 // но и описание фильма, поэтому может выдать лишний фильм
+	});
+	let val = document.getElementById("search").value.trim().toLowerCase(); // считываем что ввел пользователь, удаляем пробелы сначала и конца строки, делаем нижний регистр
 	let el = document.getElementById("movies-new").classList;
-	if(val != ""){
-		elasticItems.forEach(function(elem){
-			console.log(elem.innerText);
-			if(elem.innerText.toLowerCase().search(val) == -1) {
-				elem.classList.add("hide");
+	let i = 0; // переменная используется для того, чтобы при выводе результата поиска, первый фильм не совершал отступ слевого края
+	if(val != ""){ // проверяем не пустое ли значение ввода
+		elasticItems.forEach(function(elem){ // перебираем каждый элемент с тегом li в классе movies-new
+			if(elem.innerText.toLowerCase().search(val) == -1) { // достаем из элемента лишь текстовую часть и изменяем на нижний регистр и ищем подстроку со значением val
+				elem.classList.add("hide"); // если не находим, то делаем блок невидимым
 			}
 			else{
-				elem.classList.remove("hide");
-				if(elem != elasticItems[0]){
-					elem.classList.add("flex-margin");
-				}					
+				i++;
+				elem.classList.remove("hide"); // делаем блок видимым
+				if(i != 1){
+					elem.classList.add("flex-margin"); // если фильм, который нашли не первый по порядку, то делаем слева отступ
+				}
+				else{
+					elem.classList.remove("flex-margin"); // иначе ставим в самое начало
+				}
 			}
 		});
-		el.add("flex-start");
+		el.add("flex-start"); // смена space between на flex-start, чтобы нужные нам фильмы показывались с самого начала строки с установленным отступом, а не расставлялись равномерно по всем блоку
 	}
-	else {
+	else { // если строка пустая, то возвращаем всё обратно
 		elasticItems.forEach(function(elem){
 			elem.classList.remove("hide");
 			elem.classList.remove("flex-margin");
 		});
 		el.remove("flex-start");
 	}
+
 }
